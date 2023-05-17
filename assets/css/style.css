@@ -1,0 +1,96 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    margin: 0;
+    padding: 0;
+    color: blue
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(0, 238, 255), rgb(75, 3, 75));
+}
+
+header h1 {
+    color: darkblue;
+    font-size: 50px
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: row;   
+}
+
+section {
+    margin: 10px;
+    width: 75%;
+}
+
+aside {
+    margin: 10px;
+    width: 25%;
+    border-radius: 5px;
+    box-shadow: 5px 5px #ccc;
+    background-color: #eee;
+}
+
+aside .search {
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+
+
+aside .search button {
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 30px;
+    background-color: rgb(38, 110, 234);
+    border: 0;
+    color: white;
+}
+
+aside #error {
+    color: blue;
+    font-size: 0.8em;
+    height: 20px;
+    margin-top: 2px;
+}
+
+aside  {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+aside .recent-cities {
+    margin-top: 10px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+#weather {  
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 5px 5px #ccc;
+}
+
+#weather .city-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#weather .weather-details {
+    line-height: 2.0em;
+}

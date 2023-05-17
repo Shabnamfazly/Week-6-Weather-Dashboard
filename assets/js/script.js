@@ -127,4 +127,5 @@ const displayWeatherForecast = (weatherData) => {
     const cityInput = document.getElementById('city');
     const searchButton = document.getElementById('search');
 
-    searchButton.addEventListener('click',getCity);
+    searchButton.addEventListener ('click', getCity);
+    console.log(getCity)

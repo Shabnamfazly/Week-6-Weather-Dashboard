@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
@@ -20,21 +21,22 @@
       </div>
     </div>
     <div class="recent-searches" id="recent-cities"></div>
-    <ul>
-        <li>Location 1</li>
-        <li>Location 2</li>
-        <li>Location 3</li>
-        <li>Location 4</li>
-        <li>Location 5</li>
-    </ul>
     </aside>
        
     <section>
         <div id="weather">
             <div class="weather-icon">
                 <div class="weather-location" id="city-name"></div>
-                <img src="assets/images/cloud-icon.png" alt="">
+                <!-- <img src="assets/images/cloud-icon.png" alt=""> -->
         </div>
+
+
+    
+        <div id="forecast">
+            <h2>5-DAY FORECAST</h2>
+            <div id="forecast-days"></div>
+        </div>
+       
         <div class="weather-details">
             <div class ="date"></div>
             <span>Day</span>
@@ -58,9 +60,101 @@
             </div>
         </div>
         </div>
-        <div id="forecast">
-            <h2>5-DAY FORECAST</h2>
-            <div id="forecast-days"></div>
+
+        <div class="weather-details">
+            <div class ="date"></div>
+            <span>Day</span>
+            <span id="day">-</span>
+
+            <div class="temperature">
+                <span>Temperature</span>
+                <span id="temperature_value">-</span>
+            </div>
+            <div class="wind">
+                <span>Wind:</span>
+                <span id="wind_value">-</span>
+            </div>
+            <div class="humidity">
+                <span>Humidity</span>
+                <span id= "humidity_value">-</span>
+            </div>
+            <div class="uv-index">
+                <span>UV Index</span>
+                <span id="uv-index-value">-</span>
+            </div>
+        </div>
+        </div>
+
+        <div class="weather-details">
+            <div class ="date"></div>
+            <span>Day</span>
+            <span id="day">-</span>
+
+            <div class="temperature">
+                <span>Temperature</span>
+                <span id="temperature_value">-</span>
+            </div>
+            <div class="wind">
+                <span>Wind:</span>
+                <span id="wind_value">-</span>
+            </div>
+            <div class="humidity">
+                <span>Humidity</span>
+                <span id= "humidity_value">-</span>
+            </div>
+            <div class="uv-index">
+                <span>UV Index</span>
+                <span id="uv-index-value">-</span>
+            </div>
+        </div>
+        </div>
+        
+        <div class="weather-details">
+            <div class ="date"></div>
+            <span>Day</span>
+            <span id="day">-</span>
+
+            <div class="temperature">
+                <span>Temperature</span>
+                <span id="temperature_value">-</span>
+            </div>
+            <div class="wind">
+                <span>Wind:</span>
+                <span id="wind_value">-</span>
+            </div>
+            <div class="humidity">
+                <span>Humidity</span>
+                <span id= "humidity_value">-</span>
+            </div>
+            <div class="uv-index">
+                <span>UV Index</span>
+                <span id="uv-index-value">-</span>
+            </div>
+        </div>
+        </div>
+
+        <div class="weather-details">
+            <div class ="date"></div>
+            <span>Day</span>
+            <span id="day">-</span>
+
+            <div class="temperature">
+                <span>Temperature</span>
+                <span id="temperature_value">-</span>
+            </div>
+            <div class="wind">
+                <span>Wind:</span>
+                <span id="wind_value">-</span>
+            </div>
+            <div class="humidity">
+                <span>Humidity</span>
+                <span id= "humidity_value">-</span>
+            </div>
+            <div class="uv-index">
+                <span>UV Index</span>
+                <span id="uv-index-value">-</span>
+            </div>
+        </div>
         </div>
     </section>
     
