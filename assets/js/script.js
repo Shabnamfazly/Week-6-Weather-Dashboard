@@ -1,6 +1,10 @@
 const WEATHER_API_BASE_URL = 'https://api.openweathermap.org';
-const WEATHER_API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
+const WEATHER_API_KEY = '3770aa61038a0816864d556d797ecb9f ';
 const MAX_DAILY_FORECAST = 5;
+
+const cityInput = document.getElementById('city');
+const searchButton = document.getElementById('Search');
+const forecastList = document.getElementById('forecast-days')
 
 const recentCities = [];
 
@@ -27,7 +31,7 @@ const setCityError = (text) => {
     setTimeout(clearError, 3000);
 }
 
-const lookupLocation = (search) => {
+const lookupCity = (search) => {
 
    
     var apiUrl = `${WEATHER_API_BASE_URL}/geo/1.0/direct?q=${search}&limit=5&appid=${WEATHER_API_KEY}`;
@@ -63,7 +67,7 @@ const lookupLocation = (search) => {
 const displayCurrentWeather = (weatherData) => {
     const currentWeather = weatherData.current;
 
-    document.getElementById('temperature_value').textContent = `${currentWeather.temperature}°`;
+    document.getElementById('temperature_value').textContent = `${currentWeather.temp}°`;
     document.getElementById('wind_value').textContent = `${currentWeather.wind_speed}MPH`;
     document.getElementById('humidity_value').textContent = `${currentWeather.humidity}%`;
     document.getElementById('uv-index-value').textContent = `${currentWeather.uvi}%`;
@@ -71,18 +75,18 @@ const displayCurrentWeather = (weatherData) => {
 
 const displayWeatherForecast = (weatherData) => {
 
-    const dailyData = weatherData.daily;
-
+    const dailyData = weatherData
+console.log(weatherData,"here")
     document.getElementById('forecast').style.display = 'block';
     forecastList.innerHTML = '';
-
     for (let i = 0; i< MAX_DAILY_FORECAST; i++) {
 
-        const dailyForecast = dailyData[i];
-        const day = new Date(dailyForecast.dt * 1000).toLocaleDateString('en-GB',{weekday: 'long'});
-        const temperature = `${dailyForecast.temperature.day}°`;
-        const humidity = `${dailyForecast.humidity}%`;
-        const wind = `${dailyForecast.wind_speed}MPH`;
+        
+    
+        const day = new Date((dailyData.daily[i].dt)*1000).toLocaleDateString()
+        const temperature = `${dailyData.daily[i].temp.day}°`;
+        const humidity = `${dailyData.daily[i].humidity}%`;
+        const wind = `${dailyData.daily[i].wind_speed}MPH`;
         
         const newForecast = document.createElement('div');
         newForecast.classList.add('forecast-day');
@@ -106,7 +110,7 @@ const displayWeatherForecast = (weatherData) => {
 
 
     } 
-    const getWeather = (lat, long) =>{
+    const getWeather = (lat, lon) =>{
         var apiUrl = `${WEATHER_API_BASE_URL}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${WEATHER_API_KEY}`;
         console.log(apiUrl);
         fetch(apiUrl)
@@ -124,8 +128,7 @@ const displayWeatherForecast = (weatherData) => {
         document.getElementById('city-name').textContent = `${weatherData.name}, ${weatherData.country}`;
         getWeather(weatherData.lat,weatherData.lon);
     }
-    const cityInput = document.getElementById('city');
-    const searchButton = document.getElementById('search');
+  
 
     searchButton.addEventListener ('click', getCity);
-    console.log(getCity)
+   

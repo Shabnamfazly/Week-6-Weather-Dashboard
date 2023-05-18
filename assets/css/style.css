@@ -1,8 +1,8 @@
 body {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: blue
+    color: blue;
 }
 
 header {
@@ -15,7 +15,7 @@ header {
 
 header h1 {
     color: darkblue;
-    font-size: 50px
+    font-size: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -93,4 +93,11 @@ aside .recent-cities {
 
 #weather .weather-details {
     line-height: 2.0em;
+}
+#forecast-days {
+    display: flex;
+    flex-wrap: wrap;
+}
+.forcast-day {
+    border: solid 2px black;
 }
