@@ -41,7 +41,7 @@ const lookupCity = (search) => {
 
             console.log(data);
 
-            
+            saveLocation(data[0].name)
             var lat = data[0].lat;
             var lon = data[0].lon;
 
@@ -56,7 +56,7 @@ const lookupCity = (search) => {
                     
                     displayCurrentWeather(data);
 
-                    
+                   
                     displayWeatherForecast(data);
                 })
 
@@ -79,14 +79,15 @@ const displayWeatherForecast = (weatherData) => {
 console.log(weatherData)
     document.getElementById('forecast').style.display = 'block';
     forecastList.innerHTML = '';
-    for (let i = 0; i< MAX_DAILY_FORECAST; i++) {
+    for (let i = 1; i< MAX_DAILY_FORECAST; i++) {
 
         
     
         const day = new Date((dailyData.daily[i].dt)*1000).toLocaleDateString()
-        const temperature = `${dailyData.daily[i].temp.day}°`;
-        const humidity = `${dailyData.daily[i].humidity}%`;
-        const wind = `${dailyData.daily[i].wind_speed}MPH`;
+        const temperature = `Temperature:${dailyData.daily[i].temp.day}°`;
+        const humidity = `Humidity:${dailyData.daily[i].humidity}%`;
+        const wind = `Wind:${dailyData.daily[i].wind_speed}MPH`;
+       
         
         const newForecast = document.createElement('div');
         newForecast.classList.add('forecast-day');
@@ -103,6 +104,7 @@ console.log(weatherData)
           <div class = "humidity">
             <span>${humidity}</span>
           </div>
+    
         </div>`;
         
         forecastList.appendChild(newForecast);
@@ -139,28 +141,27 @@ console.log(weatherData)
 console.log()
 
 const saveLocation = (location) => {
-  const existingLocations = localStorage.getItem('city');
-  let locations = existingLocations ? JSON.parse(existingLocations) : [];
+const locations = retrieveLocations()
 
-  const isExistingLocation = locations.some(loca => loca.name === location.name);
-
-  if (!isExistingLocation) {
     locations.push(location);
     localStorage.setItem('city', JSON.stringify(locations));
+    retrieveLocations()
   }
-};
-console.log()
+
+
 const retrieveLocations = () => {
-  const existingLocations = localStorage.getItem('city');
-  let locations = existingLocations ? JSON.parse(existingLocations) : [];
+  const existingLocations = JSON.parse(localStorage.getItem('city'))||[];
+  console.log(existingLocations)
+ 
 
   const locationContainer = document.getElementById('recent-cities');
   locationContainer.innerHTML = '';
-  locations.forEach(location => {
+  existingLocations.forEach(location => {
     const locationElement = document.createElement('div');
-    locationElement.textContent = `${location.name}, ${location.country}`;
-    locationContainer.appendChild(destinationElement);
+    locationElement.textContent = location;
+    locationContainer.appendChild(locationElement);
   });
+  return existingLocations
 };
 
 retrieveLocations();
