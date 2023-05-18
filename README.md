@@ -8,7 +8,8 @@ The application is easy to use, just simply enter the name of a chosen location 
 Below I have linked the deployed link as well as a screenshot of the application.
 
 https://shabnamfazly.github.io/Week-6-Weather-Dashboard/ 
-<img src=".\assets\images\screenshot1.png"/>
+
+<img src=".\assets\images\Screenshot1.png"/>
 
 
 
