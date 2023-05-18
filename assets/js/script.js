@@ -76,7 +76,7 @@ const displayCurrentWeather = (weatherData) => {
 const displayWeatherForecast = (weatherData) => {
 
     const dailyData = weatherData
-console.log(weatherData,"here")
+console.log(weatherData)
     document.getElementById('forecast').style.display = 'block';
     forecastList.innerHTML = '';
     for (let i = 0; i< MAX_DAILY_FORECAST; i++) {
@@ -110,6 +110,8 @@ console.log(weatherData,"here")
 
 
     } 
+
+    
     const getWeather = (lat, lon) =>{
         var apiUrl = `${WEATHER_API_BASE_URL}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${WEATHER_API_KEY}`;
         console.log(apiUrl);
@@ -132,3 +134,33 @@ console.log(weatherData,"here")
 
     searchButton.addEventListener ('click', getCity);
    
+
+
+console.log()
+
+const saveLocation = (location) => {
+  const existingLocations = localStorage.getItem('city');
+  let locations = existingLocations ? JSON.parse(existingLocations) : [];
+
+  const isExistingLocation = locations.some(loca => loca.name === location.name);
+
+  if (!isExistingLocation) {
+    locations.push(location);
+    localStorage.setItem('city', JSON.stringify(locations));
+  }
+};
+console.log()
+const retrieveLocations = () => {
+  const existingLocations = localStorage.getItem('city');
+  let locations = existingLocations ? JSON.parse(existingLocations) : [];
+
+  const locationContainer = document.getElementById('recent-cities');
+  locationContainer.innerHTML = '';
+  locations.forEach(location => {
+    const locationElement = document.createElement('div');
+    locationElement.textContent = `${location.name}, ${location.country}`;
+    locationContainer.appendChild(destinationElement);
+  });
+};
+
+retrieveLocations();

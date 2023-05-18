@@ -2,7 +2,7 @@ body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: blue;
+    color: darkblue;
 }
 
 header {
@@ -33,8 +33,8 @@ aside {
     margin: 10px;
     width: 25%;
     border-radius: 5px;
-    box-shadow: 5px 5px #ccc;
-    background-color: #eee;
+    box-shadow: 5px 5px darkblue;
+    background-color: lightblue;
 }
 
 aside .search {
@@ -42,6 +42,7 @@ aside .search {
     padding: 5px;
     display: flex;
     flex-direction: column;
+    
 }
 
  
@@ -51,14 +52,13 @@ aside .search button {
     margin-top: 10px;
     border-radius: 5px;
     height: 30px;
-    background-color: rgb(38, 110, 234);
     border: 0;
-    color: white;
+    color: purple;
 }
 
 aside #error {
     color: blue;
-    font-size: 0.8em;
+    font-size: 2em;
     height: 20px;
     margin-top: 2px;
 }
@@ -75,15 +75,20 @@ aside .recent-cities {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #ccc;
+    background-color: lightblue;
     border-radius: 5px;
 }
 
 #weather {  
-    border-radius: 5px;
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color:lightblue;
+    margin-top: 20px;
     padding: 10px;
-    background-color: #f2f2f2;
-    box-shadow: 5px 5px #ccc;
+    margin-right: 11px;
 }
 
 #weather .city-name {
@@ -92,12 +97,22 @@ aside .recent-cities {
 }
 
 #weather .weather-details {
-    line-height: 2.0em;
+    line-height: 2em;
 }
 #forecast-days {
     display: flex;
     flex-wrap: wrap;
 }
-.forcast-day {
-    border: solid 2px black;
+.forecast-day {
+    border: solid 2px darkblue;
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50x;
+    background-color: lightblue;
+    margin-top: 20px;
+    padding: 10px;
+    margin-right: 11px;
+    line-height: 2em;
 }
